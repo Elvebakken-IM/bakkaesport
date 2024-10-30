@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Form</title>
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <header class="bg-black text-white w-full p-4 shadow-lg">
+        <h1 class="text-center text-2xl font-bold">FC25 Turnering Elvebakken</h1>
+        <p class="text-center mt-1">Svar på formsen under</p>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="w-full max-w-3xl mx-auto">
+            <iframe 
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=aGOmpZ7U9UuvmmzL9I5mVdd8E37OhFFHuXwRoUgtr75UMkhHTEVJQzhNN0RIOFRUQ1lUUDcxQ1ZETS4u&embed=true" 
+                frameborder="0" 
+                marginwidth="0" 
+                marginheight="0" 
+                class="w-full h-screen max-h-[80vh] rounded-lg shadow-lg"
+                style="border: none;" 
+                allowfullscreen 
+                webkitallowfullscreen 
+                mozallowfullscreen 
+                msallowfullscreen>
+            </iframe>
+        </div>
+    </main>
+
+    <footer class="bg-blue-600 text-white w-full p-4 text-center mt-4 shadow-lg">
+        <p>&copy; 2024 Elvebakken. All rights reserved.</p>
+        <p class="text-sm">Questions? <a href="mailto:mailtilesporther" class="underline hover:text-blue-300">Contact us</a></p>
+    </footer>
+
+</body>
+</html>
