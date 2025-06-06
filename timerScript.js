@@ -42,5 +42,5 @@ const sekunder= document.getElementById("sec")
   const interval = setInterval(calculateTimeDifference, 10);
 }
 
-const targetDate = new Date("2025-07-06T10:00:00");
+const targetDate = new Date("2025-06-09T20:30:00");
 updateCountdown(targetDate);
