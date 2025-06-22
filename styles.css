@@ -9,22 +9,65 @@
     --Hotpink: #FF46A2;
     --Black: #101010;
     --White: #f8f8f8;
+    --Orange: #f46c21;
   }
   
   body {
     font-family: 'Inter', sans-serif;
     background-color: var(--Black);
     color: var(--White);
-    height: 100vh;
+    height: 130vh;
     display: flex;
     flex-direction: column;
+  }
+
+  #backgroundTex {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
   }
   
   .navbar {
     width: 100%;
     min-height: 50px;
     padding: 1rem 2rem;
-    background-color: var(--Hotpink);
+    background-color: var(--Black);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items:center;
+    position: fixed;
+    top: 0;
+  }
+
+  .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 3vw;
+  }
+
+  .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+  }
+
+  .nav-links a:hover {
+      color: var(--turquoise);
+  }
+
+  .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(45deg, var(--Turkis), var(--Hotpink));
+      transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+      width: 100%;
   }
   
   .logo {
@@ -45,12 +88,14 @@
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
-    background-color: var(--Black);
+    background: linear-gradient(135deg, rgba(61, 207, 194, 0.1) 0%, rgba(255, 70, 162, 0.1) 100%);
   }
   .content{
+    margin-top: 5%;
     width: 80%;
     height: 100%;
-    background-color: var(--Turkis);
+    /*background-color: var(--Turkis);*/
+    
     justify-self: center;
     display: flex;
     justify-content:first baseline;
@@ -62,12 +107,25 @@
     padding-right: 10%;
     padding-left: 10%;
     padding-top: 2%;
+    padding-bottom: 2%;
     width: 90%;
 
     font-size: 170%;
     font-weight: 800;
     text-align: center;
     /*background-color: var(--Turkis);*/
+  }
+
+  #middleSpacer{
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+  }
+
+  #H1textFade{
+    background: linear-gradient(45deg, var(--Orange), var(--Hotpink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .paraText{
@@ -109,6 +167,70 @@
     animation: glowPulse 1s infinite ease-in-out;
   }
   
+  /* css for driver-profiler*/  
+  .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(61, 207, 194, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width:400px;
+    height:500px;
+    opacity: 50%;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(61, 207, 194, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .feature-card:hover::before {
+    left: 100%;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--Turkis);
+    box-shadow: 0 20px 40px rgba(61, 207, 194, 0.2);
+    opacity: 100%;
+  }
+
+  .feature-card p {
+    background: linear-gradient(135deg, var(--White), var(--Turkis));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .profile-img{
+    width: 100%;
+    height: 75%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+
+    /* Fading mask */
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
   @keyframes glowPulse {
     0%, 100% {
       text-shadow: 0 0 10px  #FF46A299;
@@ -124,7 +246,11 @@
     }
 
     
-
+    @media (max-width: 1300px) {
+      .content {
+        margin-top: 10%;
+      }
+    }
 
   @media (max-width: 1024px) {
     .MainText {
@@ -137,6 +263,7 @@
     .content {
       width: 90%;
       flex-flow: column;
+      margin-top: 10%;
     }
 
     .timerFit{
@@ -183,6 +310,7 @@
       width: 100%;
       flex-flow: column;
       align-items: center;
+      margin-top: 12%;
     }
   
     .navbar {
@@ -234,6 +362,7 @@
     .content {
       flex-flow: column;
       align-items: center;
+      margin-top: 18%;
     }
     .timerFit{
       flex-flow: row wrap;
@@ -248,5 +377,11 @@
   
     .navbar {
       padding: 0.5rem;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.6vw;
+      font-size: 95%;
     }
   }
