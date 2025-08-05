@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll-Based X Movement</title>
+  <style>
+    body {
+      height: 3000px; /* To enable scrolling */
+      margin: 0;
+      background: #f0f0f0;
+    }
+
+    .image-container {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+    }
+
+    img {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container" id="image">
+    <img src="https://via.placeholder.com/200x150" alt="Scrolling Image" />
+  </div>
+
+  <script>
+    const image = document.getElementById('image');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      image.style.transform = `translate(${scrollY}px, -50%)`;
+    });
+  </script>
+</body>
+</html>

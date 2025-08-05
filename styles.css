@@ -23,6 +23,7 @@
 
   #backgroundTex {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M 5 0 L 0 0 0 5" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
   }
   
   .navbar {
@@ -75,7 +76,7 @@
     font-weight: 800;
   }
   
-  main {
+  section {
     flex: 1;
     display: flex;
     align-items: center;
@@ -182,6 +183,9 @@
     width:400px;
     height:500px;
     opacity: 50%;
+     flex: 0 0 auto;  /* Prevent shrinking, stay in place */
+     margin-right: 50px;  /* Overlap effect */
+    scroll-snap-align: center;  /* Optional: Snap point */
   }
 
   .feature-card::before {
@@ -233,6 +237,66 @@
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
   }
+
+  .carousel {
+    height: 550px;
+    padding-top: 20px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    flex-wrap: nowrap; 
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+     -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0px,
+    black 100px,
+    black calc(100% - 100px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0px,
+    black 100px,
+    black calc(100% - 100px),
+    transparent 100%
+  );
+  }
+
+  .placeholderEmptyScrollbar{
+    width: 500px;
+    height:300px;
+    flex: 0 0 auto;
+  }
+
+  .carousel::-webkit-scrollbar {
+    height: 20px; /* scrollbar height for horizontal */
+    min-width: 100px;
+  }
+
+  .carousel::-webkit-scrollbar-track {
+    border-radius: 6px;
+  }
+
+  .carousel::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, transparent, rgba(244, 108, 33, 0.7), transparent);
+    border-radius: 6px;
+  }
+
+  .carousel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, transparent, rgba(61, 207, 194, 0.7), transparent);
+  }
+
+  /* Hide scrollbar on touchscreen devices*/
+  @media (pointer: coarse) {
+    .my-scrollable-element::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+
+
 
   @keyframes glowPulse {
     0%, 100% {
@@ -349,6 +413,10 @@
     #sec{
       font-size: 120%;
     }
+
+    #backgroundTex {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    }
   }
   
   @media (max-width: 600px) {
@@ -386,5 +454,29 @@
       list-style: none;
       gap: 1.6vw;
       font-size: 95%;
+    }
+
+    .feature-card {
+    width:300px;
+    height:375px;
+    }
+
+    .carousel {
+      height: 500px;
+      
+      -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0px,
+      black 40px,
+      black calc(100% - 40px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0px,
+      black 40px,
+      black calc(100% - 40px),
+      transparent 100%
+    );
     }
   }
