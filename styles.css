@@ -289,11 +289,15 @@
   }
 
   /* Hide scrollbar on touchscreen devices*/
-  @media (pointer: coarse) {
-    .my-scrollable-element::-webkit-scrollbar {
-      display: none;
-    }
+  @media (hover: none) and (pointer: coarse) {
+  .carousel {
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
   }
+  .carousel::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+  }
+}
 
 
 
