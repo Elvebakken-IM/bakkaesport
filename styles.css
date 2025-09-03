@@ -10,6 +10,7 @@
     --Black: #101010;
     --White: #f8f8f8;
     --Orange: #f46c21;
+    --dual1: var(--Orange)
   }
   
   body {
@@ -111,8 +112,8 @@
   .MainText{
     padding-right: 10%;
     padding-left: 10%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 3%;
+    padding-bottom: 1%;
     width: 90%;
 
     font-size: 170%;
@@ -121,9 +122,27 @@
     /*background-color: var(--Turkis);*/
   }
 
+  .MainTextSemi{
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 2%;
+    padding-bottom: 4%;
+    width: 90%;
+
+    font-size: 120%;
+    font-weight: 800;
+    text-align: center;
+    /*background-color: var(--Turkis);*/
+  }
+
   #middleSpacer{
     margin-top: 10vh;
     margin-bottom: 20vh;
+  }
+
+  #middleSpacerSmaller{
+    margin-top: 3.2vh;
+    margin-bottom: 3.5vh;
   }
 
   #H1textFade{
@@ -135,8 +154,49 @@
 
   .paraText{
     color: var(--White);
-    font-size: 50%;
+    font-size: 80%;
     margin-top: 50px;
+  }
+
+  
+
+  .dualContainers{
+    width: 100%;
+    height: 320px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-flow: row nowrap;
+    padding: 10px;
+  }
+
+  .dualContainerSubs{
+    background-color: #101010;
+    width:100%;
+    height:100%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: var(--White);
+    border-radius: 30px;
+    border-width: 5px;
+    border-style: solid;
+    padding: 10px;
+    transition: background-color 0.5s ease;
+    animation: glowPulse2 3s infinite ease-in-out;
+    cursor: pointer;
+  }
+
+  /*    transition: box-shadow 0.5s ease, transform 0.5s ease;*/
+
+  .dualContainerSubs:hover{
+    background-color:#10101018
+  }
+
+  .dualLagNavn{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 60px;
+    color: var(--Hotpink);
   }
 
   .timerFit{
@@ -152,12 +212,12 @@
 
   .timerNumbKeep{
     width: 20%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
   }
 
   .timerNumb{
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin: 0.5%;
     /*background-color: darkorchid;*/
   }
@@ -312,30 +372,108 @@
     }
   }
 
+  @keyframes glowPulse2 {
+    0%, 100% {
+      box-shadow: 0 0 100px 0 var(--dual1);
+    }
+    50% {
+      box-shadow: 0 0 5px var(--dual1);
+    }
+  }
+
     .youtube-link:hover {
       color: var(--Hotpink);
 
     }
+    @media (max-width: 1700px) {
 
+      .paraText{
+        font-size: 60%;
+      }
+
+      .dualContainers{
+        width: 100%;
+        height: 250px;
+        padding: 10px;
+      }
+
+      .dualLagNavn{
+        margin-top: 15px;
+        font-size: 49px;
+      }
+
+
+      .content {
+        margin-top: 8%;
+      }
+    }
+
+    @media (max-width: 1500px) {
+
+      .dualContainers{
+        width: 100%;
+        height: 270px;
+        padding: 10px;
+      }
+
+      .dualLagNavn{
+        margin-top: 15px;
+        font-size: 43px;
+      }
+    }
     
     @media (max-width: 1300px) {
+      .dualContainers{
+        width: 100%;
+        height: 240px;
+        padding: 10px;
+      }
+
+      .dualLagNavn{
+        margin-top: 10px;
+        font-size: 43px;
+      }
+
       .content {
         margin-top: 10%;
       }
     }
 
   @media (max-width: 1024px) {
+    
     .MainText {
       font-size: 140%;
       padding-left: 10%;
       padding-right: 10%;
       height: auto;
     }
+    .MainTextSemi{
+      padding-right: 10%;
+      padding-left: 10%;
+      padding-top: 2%;
+      padding-bottom: 4%;
+      height: auto;
+
+      font-size: 100%;
+      font-weight: 800;
+      text-align: center;
+    }
   
     .content {
       width: 90%;
       flex-flow: column;
       margin-top: 10%;
+    }
+
+    .dualContainers{
+      width: 100%;
+      height: 270px;
+      padding: 5px;
+    }
+
+    .dualLagNavn{
+      margin-top: 15px;
+      font-size: 45px;
     }
 
     .timerFit{
@@ -378,6 +516,17 @@
       padding-left: 5%;
       padding-right: 5%;
     }
+    .MainTextSemi{
+      padding-right: 10%;
+      padding-left: 10%;
+      padding-top: 0%;
+      padding-bottom: 4%;
+      height: auto;
+
+      font-size: 90%;
+      font-weight: 700;
+      text-align: center;
+    }
   
     .content {
       width: 100%;
@@ -393,6 +542,24 @@
     .logo {
       font-size: 1rem;
     }
+
+    .paraText{
+      font-weight: 700;
+      font-size: 25px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .dualLagNavn{
+      margin-top: 9px;
+      font-size: 37px;
+    }
+    .dualContainers{
+      width: 100%;
+      height: 265px;
+      padding: 2px;
+    }
+
     .timerFit{
       font-size: smaller;
     }
@@ -438,6 +605,18 @@
       font-size: 110%;
       padding-left: 2%;
       padding-right: 2%;
+      padding-top: 5%;
+    }
+    .MainTextSemi{
+      padding-right: 10%;
+      padding-left: 10%;
+      padding-top: 0%;
+      padding-bottom: 4%;
+      height: auto;
+
+      font-size: 80%;
+      font-weight: 700;
+      text-align: center;
     }
   
     .logo {
@@ -448,6 +627,11 @@
       flex-flow: column;
       align-items: center;
       margin-top: 18%;
+    }
+
+    .dualLagNavn{
+      margin-top: 10px;
+      font-size: 35px;
     }
     .timerFit{
       flex-flow: row wrap;
@@ -501,4 +685,33 @@
   .carousel::-webkit-scrollbar {
     display: none;  /* Chrome, Safari, Opera */
   }
+  }
+
+  @media (max-width: 430px) {
+
+      .paraText{
+        font-size: 45%;
+      }
+
+    .dualLagNavn{
+      margin-top: 3px;
+      font-size: 26px;
+    }
+
+    .dualContainers{
+      width: 100%;
+      height: 230px;
+      padding: 0px;
+    }
+    .MainTextSemi{
+      padding-right: 10%;
+      padding-left: 10%;
+      margin-top: -1%;
+      padding-bottom: 4%;
+      height: auto;
+
+      font-size: 70%;
+      font-weight: 700;
+      text-align: center;
+    }
   }

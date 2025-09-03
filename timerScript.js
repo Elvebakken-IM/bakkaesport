@@ -30,10 +30,10 @@ const sekunder= document.getElementById("sec")
 
     //const formattedSeconds = seconds.toFixed(1);
 
-    dager.innerHTML = "<b>"+days+"</b>" + "<br>" + "dager"
-    timer.innerHTML = "<b>"+hours+"</b>" + "<br>" + " timer"
-    minutter.innerHTML = "<b>"+minutes+"</b>" + "<br>" + " minutter"
-    sekunder.innerHTML = "    "+"<b>"+seconds+"</b>" + "<br>" + " sekunder"
+    dager.innerHTML = "<b>"+days+"</b>" + "<br><small>dager</small>"
+    timer.innerHTML = "<b>"+hours+"</b>" + "<br><small>timer</small>"
+    minutter.innerHTML = "<b>"+minutes+"</b>" + "<br><small>minutter</small>"
+    sekunder.innerHTML = "    "+"<b>"+seconds+"</b>" + "<br><small>sekunder</small>"
 
     //textField.textContent = `${days} dager, ${hours} timer, ${minutes} minutter, ${seconds} sekunder`;
   }
@@ -42,5 +42,5 @@ const sekunder= document.getElementById("sec")
   const interval = setInterval(calculateTimeDifference, 10);
 }
 
-const targetDate = new Date("2026-06-09T20:30:00");
+const targetDate = new Date("2025-10-11T12:30:00");
 updateCountdown(targetDate);
