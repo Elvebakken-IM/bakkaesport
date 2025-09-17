@@ -116,7 +116,7 @@
     padding-bottom: 1%;
     width: 90%;
 
-    font-size: 170%;
+    font-size: 250%;
     font-weight: 800;
     text-align: center;
     /*background-color: var(--Turkis);*/
@@ -162,7 +162,7 @@
 
   .dualContainers{
     width: 100%;
-    height: 320px;
+    height: 100%;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -172,7 +172,7 @@
 
   .dualContainerSubs{
     background-color: #101010;
-    width:100%;
+    width:40%;
     height:100%;
     margin-left: 1%;
     margin-right: 1%;
@@ -184,7 +184,25 @@
     transition: background-color 0.5s ease;
     animation: glowPulse2 3s infinite ease-in-out;
     cursor: pointer;
+    
   }
+
+
+  .lagImages1{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+
+    /* Fading mask */
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+
 
   /*    transition: box-shadow 0.5s ease, transform 0.5s ease;*/
 
@@ -195,7 +213,7 @@
   .dualLagNavn{
     text-align: center;
     margin-top: 40px;
-    font-size: 60px;
+    font-size: 74px;
     color: var(--Hotpink);
   }
 
@@ -383,6 +401,24 @@
 
     .youtube-link:hover {
       color: var(--Hotpink);
+      .dualLagNavn{
+        margin-top: 15px;
+        font-size: 49px;
+      }
+    }
+
+    @media (max-width: 2000px) {
+      .dualLagNavn {
+        margin-top: 20px;
+        font-size: 50px;
+      }
+    }
+
+    @media (max-width: 1700px) {
+      .MainText {
+      font-size: 170%;
+
+    }
 
     }
     @media (max-width: 1700px) {
@@ -393,7 +429,7 @@
 
       .dualContainers{
         width: 100%;
-        height: 250px;
+        height: 100%;
         padding: 10px;
       }
 
@@ -412,7 +448,7 @@
 
       .dualContainers{
         width: 100%;
-        height: 270px;
+        height: 100%;
         padding: 10px;
       }
 
@@ -421,21 +457,33 @@
         font-size: 43px;
       }
     }
-    
+    @media (max-width: 1400px) {
+      .dualLagNavn{
+        margin-top: 10px;
+        font-size: 41px;
+      }
+    }
     @media (max-width: 1300px) {
       .dualContainers{
         width: 100%;
-        height: 240px;
+        height: 100%;
         padding: 10px;
       }
 
       .dualLagNavn{
         margin-top: 10px;
-        font-size: 43px;
+        font-size: 40px;
       }
 
       .content {
         margin-top: 10%;
+        width: 90%;
+      }
+    }
+    @media (max-width: 1245px) {
+      .dualLagNavn{
+        margin-top: 10px;
+        font-size: 37px;
       }
     }
 
@@ -467,13 +515,13 @@
 
     .dualContainers{
       width: 100%;
-      height: 270px;
+      height: 100%;
       padding: 5px;
     }
 
     .dualLagNavn{
-      margin-top: 15px;
-      font-size: 45px;
+      margin-top: 7px;
+      font-size: 30px;
     }
 
     .timerFit{
@@ -506,6 +554,12 @@
   
     .logo {
       font-size: 1.2rem;
+    }
+  }
+  @media (max-width: 850px) {
+      .dualLagNavn{
+      margin-top: 5px;
+      font-size: 27px;
     }
   }
   
@@ -552,11 +606,11 @@
 
     .dualLagNavn{
       margin-top: 9px;
-      font-size: 37px;
+      font-size: 31px;
     }
     .dualContainers{
       width: 100%;
-      height: 265px;
+      height: 100%;
       padding: 2px;
     }
 
@@ -631,7 +685,7 @@
 
     .dualLagNavn{
       margin-top: 10px;
-      font-size: 35px;
+      font-size: 30px;
     }
     .timerFit{
       flex-flow: row wrap;
@@ -695,12 +749,12 @@
 
     .dualLagNavn{
       margin-top: 3px;
-      font-size: 26px;
+      font-size: 25px;
     }
 
     .dualContainers{
       width: 100%;
-      height: 230px;
+      height: 100%;
       padding: 0px;
     }
     .MainTextSemi{
@@ -713,5 +767,12 @@
       font-size: 70%;
       font-weight: 700;
       text-align: center;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .dualLagNavn{
+      margin-top: 2px;
+      font-size: 23px;
     }
   }
