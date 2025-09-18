@@ -26,14 +26,14 @@ const sekunder= document.getElementById("sec")
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor(((difference % (1000 * 60)) / 1000)*10)/10;
+    const seconds = Math.floor(((difference % (1000 * 60)) / 1000));
 
     //const formattedSeconds = seconds.toFixed(1);
 
-    dager.innerHTML = "<b>"+days+"</b>" + "<br><small>dager</small>"
-    timer.innerHTML = "<b>"+hours+"</b>" + "<br><small>timer</small>"
-    minutter.innerHTML = "<b>"+minutes+"</b>" + "<br><small>minutter</small>"
-    sekunder.innerHTML = "    "+"<b>"+seconds+"</b>" + "<br><small>sekunder</small>"
+    dager.innerHTML = "<b>"+days+"</b>" + "<br><small><small>dager</small></small>"
+    timer.innerHTML = "<b>"+hours+"</b>" + "<br><small>t<small>imer</small></small>"
+    minutter.innerHTML = "<b>"+minutes+"</b>" + "<br><small><small>minutter</small></small>"
+    sekunder.innerHTML = "    "+"<b>"+seconds+"</b>" + "<br><small><small>sekunder</small></small>"
 
     //textField.textContent = `${days} dager, ${hours} timer, ${minutes} minutter, ${seconds} sekunder`;
   }
