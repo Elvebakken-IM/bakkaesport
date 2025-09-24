@@ -535,6 +535,13 @@
       height: 100%;
       padding: 5px;
     }
+    .dualContainerSubs{
+      overflow: hidden;
+      width:50%;
+      height:100%;
+      margin-left: 0.8%;
+      margin-right: 0.8%;
+    }
 
     .dualLagNavn{
       margin-top: 7px;
